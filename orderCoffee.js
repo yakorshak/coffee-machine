@@ -1,12 +1,11 @@
 export function orderCoffee(arrayOfMonets) {
   validateInput(arrayOfMonets);
 
-  let choosenCoffee = chooseCoffee();
+  const choosenCoffee = chooseCoffee();
 
   if (choosenCoffee === '1') {
     const AMERICANO_PRICE = 0.95;
-
-    let restOfMoneyByMonets = calculationProcessing(AMERICANO_PRICE, arrayOfMonets);
+    const restOfMoneyByMonets = calculationProcessing(AMERICANO_PRICE, arrayOfMonets);
 
     return {
       coffee: 'Americano',
@@ -17,8 +16,7 @@ export function orderCoffee(arrayOfMonets) {
 
   if (choosenCoffee === '2') {
     const AMERICANO_WITH_MILK_PRICE = 1.26;
-
-    let restOfMoneyByMonets = calculationProcessing(AMERICANO_WITH_MILK_PRICE, arrayOfMonets);
+    const restOfMoneyByMonets = calculationProcessing(AMERICANO_WITH_MILK_PRICE, arrayOfMonets);
 
     return {
       coffee: 'Americano with milk',
@@ -29,8 +27,7 @@ export function orderCoffee(arrayOfMonets) {
 
   if (choosenCoffee === '3') {
     const CAPPUCCINO = 2.33;
-
-    let restOfMoneyByMonets = calculationProcessing(CAPPUCCINO, arrayOfMonets);
+    const restOfMoneyByMonets = calculationProcessing(CAPPUCCINO, arrayOfMonets);
 
     return {
       coffee: 'Cappuccino',
@@ -43,7 +40,7 @@ export function orderCoffee(arrayOfMonets) {
 }
 
 function chooseCoffee() {
-  let choosenCoffee = prompt('Tab the number of coffee you would like to choose: \n 1. Americano \n 2. Americano with milk \n 3. Сappuccino');
+  const choosenCoffee = prompt('Tab the number of coffee you would like to choose: \n 1. Americano \n 2. Americano with milk \n 3. Сappuccino');
   return choosenCoffee;
 }
 
@@ -60,9 +57,9 @@ function validateInput(arrayOfMonets) {
 }
 
 function isMatch(elem) {
-  let arrOfAcceptedMonets = [1, 2, 5, 10, 20, 50];
-  let check = arrOfAcceptedMonets.includes(elem);
-  let result = check ? elem : false;
+  const arrOfAcceptedMonets = [1, 2, 5, 10, 20, 50];
+  const check = arrOfAcceptedMonets.includes(elem);
+  const result = check ? elem : false;
 
   if (!result) {
     throw new Error('You have entered monets which not accepted');
@@ -111,9 +108,7 @@ function calculateRestByMonets(value) {
 }
 
 function calculationProcessing(coffePrice, arrayOfMonets) {
-
   let givenMoney = arrayOfMonets.reduce((sum, current) => sum + current, 0);
-
   givenMoney = centsToDollar(givenMoney);
 
   if (givenMoney < coffePrice) {
@@ -121,10 +116,8 @@ function calculationProcessing(coffePrice, arrayOfMonets) {
   }
 
   let restOfMoney = givenMoney - coffePrice;
-
   restOfMoney = dollarToCents(restOfMoney);
-
-  let restOfMoneyByMonets = calculateRestByMonets(restOfMoney);
+  const restOfMoneyByMonets = calculateRestByMonets(restOfMoney);
 
   return restOfMoneyByMonets;
 }
