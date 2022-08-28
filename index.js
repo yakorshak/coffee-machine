@@ -1,10 +1,14 @@
-// Есть кофейный аппарат и к нему нужно написать софт. 
-// Аппарат может принимать монеты в 1, 2, 5, 10, 20, 50 центов. 
-// Есть 3 вида кофе - Американо($0.95), Американо с молоком($1.26) и капучино($2.33), 
-// Нужно реализовать алгоритм работы кофейного аппарата с валидацией. 
-// Человек вносит деньги, выбирает что купить, забирает сдачу и свой кофе. 
-// Сдачу нужно вернуть наименьшим кол-вом монет. 
-// К примеру если сдача - $1 - нужно вернуть 50 и 50 центов, если $0.9 - 50, 20 и 20 центов монеты.
+/*
+Conditions and restrictions:
+
+There is a coffee machine and you need to write software for it. 
+The device can accept coins in 1, 2, 5, 10, 20, and 50 cents. 
+There are 3 types of coffee - Americano ($0.95), Americano with milk ($1.26), and cappuccino ($2.33). 
+It is necessary to implement the algorithm of the coffee machine with validation. 
+A person deposits money chooses what to buy, and takes change and his coffee. 
+Change must be returned with the smallest number of coins. 
+For example, if the change is $1, you need to return 50 and 50 cents, if $0.9 - 50, 20 and 20 cents of the coin.
+*/
 
 import { orderCoffee } from './orderCoffee.js';
 
