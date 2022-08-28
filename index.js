@@ -10,7 +10,7 @@ Change must be returned with the smallest number of coins.
 For example, if the change is $1, you need to return 50 and 50 cents, if $0.9 - 50, 20 and 20 cents of the coin.
 */
 
-import { orderCoffee } from './orderCoffee.js';
+import { orderCoffee } from './order-coffee.js';
 
 let monetInput = [50, 50, 50, 20, 50, 20, 5, 10];
 let coffee = orderCoffee(monetInput); // 1, 2, 5, 10, 50
